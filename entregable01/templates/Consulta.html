@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Usuario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta de Usuario</h1>
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <label for="id">ID (numérico):</label>
+                <input type="number" id="id" name="id" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre de la Persona:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="contacto">Número de Contacto:</label>
+                <input type="tel" id="contacto" name="contacto" pattern="[0-9]{10}" placeholder="Ej. 1234567890" required>
+            </div>
+            <div class="form-group">
+                <label for="mascota">Nombre de la Mascota:</label>
+                <input type="text" id="mascota" name="mascota" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo_mascota">Tipo de Mascota:</label>
+                <select id="tipo_mascota" name="tipo_mascota" required>
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option>
+                    <option value="ave">Ave</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fecha_ingreso">Fecha de Ingreso de la Mascota:</label>
+                <input type="date" id="fecha_ingreso" name="fecha_ingreso" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Consultar">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
