@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Usuario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url(https://s1.elespanol.com/2023/03/10/curiosidades/mascotas/747436034_231551832_1706x1280.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;      
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 150px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input[type="number"], .form-group button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group button {
+            background-color: #039ae0;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-group button:hover {
+            background-color: #9a03e0;
+        }
+        #result {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px; 
+            }
+            h1 {
+                font-size: 20px; 
+            }
+            .form-group button {
+                font-size: 14px; 
+            }
+        }
+
+        @media (min-width: 601px) {            
+            .container {
+                max-width: 600px; 
+            }
+            h1 {
+                font-size: 28px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta de Usuario</h1>
+        <div class="form-group">
+            <label for="id">Número de Documento:</label>
+            <input type="number" id="id" required placeholder="Ingrese el número de documento">
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="consultarUsuario()">Consultar</button>
+        </div>
+        <div id="result">
+            <!-- Resultados de la consulta -->
+        </div>
+    </div>
+
+    <script>
+        
+        function consultarUsuario() {
+            const id = document.getElementById("id").value;
+            
+            if (id) {
+              
+                const usuario = {
+                    nombre: "Juan Pérez",
+                    contacto: "1234567890",
+                    mascota: "Firulais",
+                    tipoMascota: "Perro",
+                    fechaIngreso: "2024-01-15"
+                };
+
+
+                document.getElementById("result").innerHTML = `
+                    <h3>Datos del Usuario</h3>
+                    <p><strong>Nombre:</strong> ${usuario.nombre}</p>
+                    <p><strong>Contacto:</strong> ${usuario.contacto}</p>
+                    <p><strong>Mascota:</strong> ${usuario.mascota}</p>
+                    <p><strong>Tipo de Mascota:</strong> ${usuario.tipoMascota}</p>
+                    <p><strong>Fecha de Ingreso:</strong> ${usuario.fechaIngreso}</p>
+                `;
+            } else {
+                document.getElementById("result").innerHTML = "<p>Por favor, ingrese un número de documento válido.</p>";
+            }
+        }
+    </script>
+    <div class="button-container">
+        <div><a href="home.html">Volver</a></div>
+</body>
+</html>
